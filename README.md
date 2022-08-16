@@ -7,7 +7,9 @@
 ![image](https://user-images.githubusercontent.com/74556484/184950445-736fe826-fe9d-409b-a173-a8ed022c284d.png)
 
 # run cronjob
+* npm install
 * node index.js
+* or:
 * pm2 start
 * pm2 log<id>
 
