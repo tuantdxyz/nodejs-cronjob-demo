@@ -4,7 +4,7 @@
 ![image](https://user-images.githubusercontent.com/74556484/184950046-1637c2ac-89f4-454f-94ac-58a0998d0c55.png)
 
 * Change sql, limit record = 1000, param, token, host in [schedule.js](schedule.js)
-![image](https://user-images.githubusercontent.com/74556484/184950445-736fe826-fe9d-409b-a173-a8ed022c284d.png)
+![image](https://user-images.githubusercontent.com/74556484/184952950-ee3a187d-d265-447c-9270-deed906fdd67.png)
 
 # run cronjob
 * npm install
