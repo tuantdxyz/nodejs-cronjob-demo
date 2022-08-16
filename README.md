@@ -1,17 +1,15 @@
 # nodejs-cronjob-demo
 * scan DB1 with status=0 ==> call api insert to DB2 ==> update status=1 in DB1
-* Change url api post, database connection in [config.js](config.js)
+* Change url api post, database connection, time run job (scheduleinterval = 30s) in [config.js](config.js)
 ![image](https://user-images.githubusercontent.com/74556484/184950046-1637c2ac-89f4-454f-94ac-58a0998d0c55.png)
 
-* Change sql, limit record, param, token, host in [schedule.js](schedule.js)
+* Change sql, limit record = 1000, param, token, host in [schedule.js](schedule.js)
 ![image](https://user-images.githubusercontent.com/74556484/184950445-736fe826-fe9d-409b-a173-a8ed022c284d.png)
 
 # run cronjob
 * npm install
 * node index.js
-* or:
-* pm2 start
-* pm2 log<id>
+* or: pm2 start, pm2 stop, pm2 log...
 
  # evidence
   
