@@ -28,12 +28,12 @@ const Service = {
                     medium_score: row.id_ref,
                     avatar: "https://cdn.fakercloud.com/avatars/ionuss_128.jpg"
                 }
-                const tvan_token = "TOKEN";   //TODO change TOKEN
+                const token = "TOKEN";   //TODO change TOKEN
                 let host = config.url_api
                 await axios.post(`${host}students`, params, {
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": `Basic ${tvan_token}`
+                        // "Authorization": `Basic ${token}`
                     }
                 })
                     .then(result => {

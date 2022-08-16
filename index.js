@@ -13,7 +13,7 @@ let httpServer
 function initialize() {
     return new Promise((resolve, reject) => {
         if (config.scheduleslist) {
-            console.log("Start job")
+            console.log("Start cronjob")
             for (const scheduletask of config.scheduleslist) {
                 // const schedulename = scheduletask.schedulename
                 const scheduleinterval = scheduletask.scheduleinterval
@@ -58,16 +58,6 @@ function close() {
 
 async function startup() {
     try {
-        if (dbs.initialize) {
-            console.log("Initializing database")
-            await dbs.initialize()
-        }
-    }
-    catch (err) {
-        console.error(err)
-        process.exit(1)
-    }
-    try {
         console.log("Initializing application")
         await initialize()
     }
@@ -81,15 +71,6 @@ async function shutdown(err) {
     try {
         console.log("Closing application")
         await close()
-    }
-    catch (e) {
-        console.error(e)
-    }
-    try {
-        if (dbs.close) {
-            console.log("Closing database")
-            await dbs.close()
-        }
     }
     catch (e) {
         console.error(e)
