@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-cronjob-demo",
+  "version": "1.0.0",
+  "description": "cronjob mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tuantdxyz@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "mysql2": "^2.1.0",
+    "node-cron": "^3.0.0",
+    "pm2": "^4.5.5"
+  }
+}
