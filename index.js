@@ -2,16 +2,18 @@
 const cron = require('node-cron')
 const http = require("http")
 const express = require("express")
+const bodyParser = require("body-parser")
 const cors = require("cors")
 const helmet = require("helmet")
 const config = require("./config")
-const dbs = require(`./dbs`)
-const schedule = require(`./schedule`)
+const schedule = require('./schedule')
+const restapi = require('./restapi')
 
 // run cronjob
 let httpServer
 function initialize() {
     return new Promise((resolve, reject) => {
+        
         if (config.scheduleslist) {
             console.log("Start cronjob")
             for (const scheduletask of config.scheduleslist) {
@@ -19,6 +21,7 @@ function initialize() {
                 const scheduleinterval = scheduletask.scheduleinterval
                 // const schedulemethod = scheduletask.schedulemethod
                 const schedulestatus = scheduletask.schedulestatus
+                // scheduleslist = 1 ==> start job
                 if (schedulestatus) {
                     cron.schedule(scheduleinterval, () => {
                         // eval(schedulemethod)
@@ -30,10 +33,19 @@ function initialize() {
 
         // run app
         const app = express()
+        const api = express.Router()
+        app.enable('trust proxy')
+        app.use(bodyParser.json({ limit: '16mb' }))
+        app.use(bodyParser.urlencoded({ limit: '16mb', extended: true }))
         app.use(helmet())
         app.use(cors())
+        // call api
+        app.use("/api", api)
+        api.post('/persion', restapi.createPersion)
+
         httpServer = http.createServer(app)
         httpServer.listen(config.port, err => {
+            console.log('Server is running:', config.port)
             if (err) {
                 reject(err)
                 return
