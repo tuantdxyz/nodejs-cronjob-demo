@@ -6,10 +6,9 @@
 * Change sql, limit record = 1000, param, token, host in [schedule.js](schedule.js)
 ![image](https://user-images.githubusercontent.com/74556484/184952950-ee3a187d-d265-447c-9270-deed906fdd67.png)
 
-# run cronjob
-* npm install
-* node index.js
-* or: pm2 start, pm2 stop, pm2 log...
+# run cronjob & restapi
+* 1. npm install
+* 2. node index.js or: pm2 start, pm2 stop, pm2 log...
 
  # evidence
   
