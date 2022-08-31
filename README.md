@@ -7,8 +7,8 @@
 ![image](https://user-images.githubusercontent.com/74556484/184952950-ee3a187d-d265-447c-9270-deed906fdd67.png)
 
 # run cronjob & restapi
-* 1. npm install
-* 2. node index.js or: pm2 start, pm2 stop, pm2 log...
+* npm install
+* node index.js or: pm2 start, pm2 stop, pm2 log...
 
  # evidence
   
